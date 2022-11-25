@@ -1,4 +1,4 @@
-import {  defineConfig } from 'tinacms'
+import { defineConfig } from 'tinacms'
 
 const branch =
   process.env.NEXT_PUBLIC_TINA_BRANCH ||
@@ -10,6 +10,16 @@ export default defineConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID, // generated on app.tina.io
   branch,
   schema: {
-    // ...
+    collections: [
+      {
+        name: 'posts',
+        label: 'Blog Posts',
+        path: 'content/posts',
+        format: 'mdx',
+        fields: [
+          // An array of fields
+        ],
+      },
+    ]
   },
 })
